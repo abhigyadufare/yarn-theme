@@ -1,0 +1,55 @@
+<section class="testimonials" style="background-color: {{ settings.accent_color }};">
+  <div class="container">
+    <h2>{{ section.settings.title }}</h2>
+    <div class="testimonials-grid">
+      {% for block in section.blocks %}
+        <div class="testimonial-card">
+          <div class="avatar">{{ block.settings.initial }}</div>
+          <blockquote>{{ block.settings.quote }}</blockquote>
+          <cite>- {{ block.settings.name }}</cite>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "What Our Customers Say"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "initial",
+          "label": "Initial",
+          "default": "A"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "The yarns are so soft and vibrant! I've never enjoyed knitting more."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Amy"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3
+}
+{% endschema %}
