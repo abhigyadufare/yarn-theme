@@ -210,6 +210,60 @@ quick-add-modal .product-form__buttons {
   box-sizing: border-box;
 }
 
+.quantity-selector {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(var(--color-foreground), 0.2);
+  border-radius: var(--inputs-radius);
+  background: rgb(var(--color-background));
+  overflow: hidden;
+}
+
+.quantity-button {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: rgb(var(--color-foreground));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--duration-short) ease;
+}
+
+.quantity-button:hover {
+  background: rgba(var(--color-foreground), 0.1);
+}
+
+.quantity-button .icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.quantity-input {
+  width: 4rem;
+  text-align: center;
+  border: none;
+  background: transparent;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: rgb(var(--color-foreground));
+  -moz-appearance: textfield;
+}
+
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 quick-add-modal .product-media-container.constrain-height {
   --viewport-offset: calc((var(--modal-height-offset) + var(--modal-padding) + var(--popup-border-width)) * 2);
 }
