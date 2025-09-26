@@ -362,3 +362,101 @@
 .card-article-info {
   margin-top: 1rem;
 }
+
+/* Feminine card styles for yarn store */
+.card--card {
+  background: linear-gradient(135deg, rgba(255, 182, 193, 0.1), rgba(221, 160, 221, 0.1)); /* blush to lavender gradient */
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.card--card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #FFB6C1, #E6E6FA, #F0FFF0, #FFC0CB);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.card--card .card__media {
+  position: relative;
+}
+
+.card--card .card__media::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #FFB6C1 20%, transparent 20%);
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
+}
+
+.card--card .card__media::before {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(circle, #E6E6FA 20%, transparent 20%);
+  border-radius: 50%;
+  animation: float 4s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.card__information .price {
+  background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.quick-add__submit {
+  background: linear-gradient(135deg, #E6E6FA, #D8BFD8);
+  border: none;
+  border-radius: 25px;
+  color: #2D2D2D;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quick-add__submit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.card-wrapper:hover .card--card {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+.card__heading {
+  font-family: 'Poppins', sans-serif;
+  color: #2D2D2D;
+}
+
+.card-information {
+  font-family: 'Poppins', sans-serif;
+}
